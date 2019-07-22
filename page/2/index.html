@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Paranoid&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Paranoid&#39;s Blog">
+<meta property="og:url" content="http://wangjian1119.cn/page/2/index.html">
+<meta property="og:site_name" content="Paranoid&#39;s Blog">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Paranoid&#39;s Blog">
+  
+    <link rel="alternate" href="/atom.xml" title="Paranoid&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/bitbug_favicon.ico">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangjian1119.cn"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Paranoid&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-token" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/13/cjyef6iw3000g4kuya6nt3mjz/" class="article-date">
+  <time datetime="2018-11-13T06:36:21.000Z" itemprop="datePublished">2018-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/13/cjyef6iw3000g4kuya6nt3mjz/">token 认知</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近研究了下基于token的身份验证，并将这种机制整合在个人项目中。现在很多网站的认证方式都从传统的seesion+cookie转向token校验。对比传统的校验方式，token确实有更好的扩展性与安全性。
+        
+          <p class="article-more-link">
+            <a href="/2018/11/13/cjyef6iw3000g4kuya6nt3mjz/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2018/11/13/cjyef6iw3000g4kuya6nt3mjz/" data-id="cjyef6iw3000g4kuya6nt3mjz" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/token/">token</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-应急api" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/" class="article-date">
+  <time datetime="2018-11-02T07:48:49.000Z" itemprop="datePublished">2018-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/">应急api</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外网: http://111.198.29.129:8001     局域网: http:192.168.0.7:8001</span><br></pre></td></tr></table></figure>
+<h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><p><a href="#1注册">1、注册</a><br><br><a href="#2登录">2、登录</a><br><br><a href="#3修改用户名">3、修改用户名</a><br><br><a href="#4修改头像">4、修改头像</a><br><br><a href="#5添加标记">5、添加标记</a><br><br><a href="#6删除标记">6、删除标记</a><br>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/" data-id="cjyef6iwv000p4kuyq2hkow7r" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/">api</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-XMLHttpRequest对象的常用方法和属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/24/cjyef6ivk000b4kuy7xpk4o2i/" class="article-date">
+  <time datetime="2017-09-24T08:52:17.000Z" itemprop="datePublished">2017-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/24/cjyef6ivk000b4kuy7xpk4o2i/">XMLHttpRequest对象的常用方法和属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>方法:写在这里的为必选参数或者经常用到的可选参数</p>
+<h4 id="1-open"><a href="#1-open" class="headerlink" title="1. open()"></a>1. open()</h4><p>书上解释: 用于设置请求的目标url请求方法, 以及其他参数信息</p>
+<p>个人理解: 发送请求的页面在不刷新的情况能将参数传给一个服务器进行处理, 这个方法就是将这些个参数传送过去<br>
+        
+          <p class="article-more-link">
+            <a href="/2017/09/24/cjyef6ivk000b4kuy7xpk4o2i/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2017/09/24/cjyef6ivk000b4kuy7xpk4o2i/" data-id="cjyef6ivk000b4kuy7xpk4o2i" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-文件模板" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/02/cjyef6ix1000r4kuy6894l0y2/" class="article-date">
+  <time datetime="2017-09-02T06:42:08.000Z" itemprop="datePublished">2017-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/02/cjyef6ix1000r4kuy6894l0y2/">文件模板</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HTML模版指的是团队使用的初始化HTML文件，里面会根据不同平台而采用不一样的设置，一般主要不同的设置就是 mata 标签的设置，以下是 PC 和移动端的 HTML 模版。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/09/02/cjyef6ix1000r4kuy6894l0y2/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2017/09/02/cjyef6ix1000r4kuy6894l0y2/" data-id="cjyef6ix1000r4kuy6894l0y2" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-地图坐标" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/11/cjyef6iwg000l4kuydawaydy9/" class="article-date">
+  <time datetime="2017-06-11T06:27:51.000Z" itemprop="datePublished">2017-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/11/cjyef6iwg000l4kuydawaydy9/">地图坐标</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="坐标类型"><a href="#坐标类型" class="headerlink" title="坐标类型"></a>坐标类型</h1><ol>
+<li><p>WGS-84坐标系：地心坐标系，GPS原始坐标体系</p>
+<p>在中国，任何一个地图产品都不允许使用GPS坐标，据说是为了保密。</p>
+</li>
+<li><p>GCJ-02 坐标系：国测局坐标，火星坐标系</p>
+</li>
+</ol>
+<ul>
+<li><p>国测局02年发布的坐标体系，它是一种对经纬度数据的加密算法，即加入随机的偏差。</p>
+</li>
+<li><p>互联网地图在国内必须至少使用GCJ-02进行首次加密，不允许直接使用WGS-84坐标下的地理数据，同时任何坐标系均不可转换为WGS-84坐标。</p>
+</li>
+<li><p>是国内最广泛使用的坐标体系，高德、腾讯、Google中国地图都使用它。</p>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/11/cjyef6iwg000l4kuydawaydy9/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2017/06/11/cjyef6iwg000l4kuydawaydy9/" data-id="cjyef6iwg000l4kuydawaydy9" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-git-命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/13/cjyef6ivb00094kuywddoy8k6/" class="article-date">
+  <time datetime="2017-04-13T13:22:51.000Z" itemprop="datePublished">2017-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/13/cjyef6ivb00094kuywddoy8k6/">git 命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git用户名邮箱的全局配置"><a href="#git用户名邮箱的全局配置" class="headerlink" title="git用户名邮箱的全局配置"></a>git用户名邮箱的全局配置</h2><pre><code>git config --global user.name &quot;xxxxx&quot;           # 全局设置名字
+
+git config --global user.email &quot;xxxxx@xx.com&quot;    # 全局设置邮箱
+
+git config --list                                # 看全局配置
+</code></pre><h2 id="配置-SSH"><a href="#配置-SSH" class="headerlink" title="配置 SSH"></a>配置 SSH</h2>
+        
+          <p class="article-more-link">
+            <a href="/2017/04/13/cjyef6ivb00094kuywddoy8k6/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2017/04/13/cjyef6ivb00094kuywddoy8k6/" data-id="cjyef6ivb00094kuywddoy8k6" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/命令/">命令</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/13/cjyef6iv300084kuyjzaa4wel/" class="article-date">
+  <time datetime="2017-03-13T06:35:21.000Z" itemprop="datePublished">2017-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/13/cjyef6iv300084kuyjzaa4wel/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+        
+          <p class="article-more-link">
+            <a href="/2017/03/13/cjyef6iv300084kuyjzaa4wel/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2017/03/13/cjyef6iv300084kuyjzaa4wel/" data-id="cjyef6iv300084kuyjzaa4wel" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+</section>
+           
+    <aside id="sidebar">
+  <canvas id="canvas" style="width: 100%;margin-top: 50px"></canvas>
+  
+    
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/10/cjyef6ivy000e4kuyld1lhagf/">pm2 命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/24/cjyef6ix6000s4kuyrkciswkq/">linux 目录以及作用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/20/cjyef6iwa000j4kuych4qge6v/">关于移动端适配，你必须要知道的</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/17/cjyef6iwo000n4kuyar8xzdvi/">html5 兼容问题</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/cjyef6iuc00034kuygbr98hph/">GNSS 常用命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+<script>
+    var digit=
+      [
+          [
+              [0,0,1,1,1,0,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,0,1,1,0],
+              [0,0,1,1,1,0,0]
+          ],//0
+          [
+              [0,0,0,1,1,0,0],
+              [0,1,1,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [1,1,1,1,1,1,1]
+          ],//1
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,1,1],
+              [1,1,1,1,1,1,1]
+          ],//2
+          [
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//3
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,0],
+              [0,0,1,1,1,1,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,1,1,0],
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,1]
+          ],//4
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,1,1,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//5
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//6
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0]
+          ],//7
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//8
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,1,1,0,0,0,0]
+          ],//9
+          [
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0]
+          ]//:
+      ];
+  var canvas = document.getElementById('canvas');
+  if(canvas.getContext){
+      var cxt = canvas.getContext('2d');
+      //声明canvas的宽高
+      var H = 100,W = 700;
+      canvas.height = H;
+      canvas.width = W;
+      //存储时间数据
+      var data = [];
+      //存储运动的小球
+      var balls = [];
+      //设置粒子半径
+      var R = canvas.height/20-1;
+      (function(){
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+          data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);    
+      })();
+  
+      /*生成点阵数字*/
+      function renderDigit(index,num){
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      cxt.beginPath();
+                      cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                      cxt.closePath();
+                      cxt.fill();
+                  }
+              }
+          }        
+      }
+  
+      /*更新时钟*/
+      function updateDigitTime(){
+          var changeNumArray = [];
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          var NewData = [];
+          NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+          for(var i = data.length-1; i >=0 ; i--){
+              //时间发生变化 
+              if(NewData[i] !== data[i]){
+                  //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                  changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+              }
+          }
+          //增加小球
+          for(var i = 0; i< changeNumArray.length; i++){
+              addBalls.apply(this,changeNumArray[i].split('_'));
+          }    
+          data = NewData.concat();
+      }
+  
+      /*更新小球状态*/
+      function updateBalls(){
+          for(var i = 0; i < balls.length; i++){
+              balls[i].stepY += balls[i].disY;
+              balls[i].x += balls[i].stepX;
+              balls[i].y += balls[i].stepY;    
+              if(balls[i].x > W + R || balls[i].y > H + R){
+                  balls.splice(i,1);
+                  i--;
+              }                
+          }
+      }
+  
+      /*增加要运动的小球*/
+      function addBalls(index,num){
+          var numArray = [1,2,3];
+          var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      var ball = {
+                          x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                          y:i*2*(R+1)+(R+1),
+                          stepX:Math.floor(Math.random() * 4 -2),
+                          stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                          color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                          disY:1
+                      };
+                      balls.push(ball);            
+                  }
+              }
+          }    
+      }
+  
+      /*渲染*/
+      function render(){
+          //重置画布宽度，达到清空画布的效果
+          canvas.height = 100;
+          //渲染时钟
+          for(var i = 0; i < data.length; i++){
+              renderDigit(i,data[i]);
+          }        
+          //渲染小球
+          for(var i = 0; i < balls.length; i++){
+              cxt.beginPath();
+              cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+              cxt.fillStyle = balls[i].color;
+              cxt.closePath();
+              cxt.fill();                
+          }
+      }
+  
+      clearInterval(oTimer);
+      var oTimer = setInterval(function(){
+          //更新时钟
+          updateDigitTime();
+          //更新小球状态
+          updateBalls();
+          //渲染
+          render();
+      },50);    
+  }
+  </script>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 wangjian&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wj651196692@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> 
+  <script>
+  var gitment = new Gitment({
+    // id: '页面 ID', // 可选。默认为 location.href
+    owner: 'wangjian1119',
+    repo: 'wangjian1119.github.io',
+    oauth: {
+    client_id: '225ee683ce3133636796',
+    client_secret: 'b3797ac45d4460c94d68e1e2ec3b83cde33c4571',
+    }
+  })
+  gitment.render(document.getElementById("gitment_comments"))
+</script>
+
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>

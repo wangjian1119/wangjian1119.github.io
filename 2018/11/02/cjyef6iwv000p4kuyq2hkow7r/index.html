@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>应急api | Paranoid&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1外网: http://111.198.29.129:8001     局域网: http:192.168.0.7:8001 目录：1、注册2、登录3、修改用户名4、修改头像5、添加标记6、删除标记">
+<meta name="keywords" content="api">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应急api">
+<meta property="og:url" content="http://wangjian1119.cn/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/index.html">
+<meta property="og:site_name" content="Paranoid&#39;s Blog">
+<meta property="og:description" content="1外网: http://111.198.29.129:8001     局域网: http:192.168.0.7:8001 目录：1、注册2、登录3、修改用户名4、修改头像5、添加标记6、删除标记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-11T07:33:44.033Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="应急api">
+<meta name="twitter:description" content="1外网: http://111.198.29.129:8001     局域网: http:192.168.0.7:8001 目录：1、注册2、登录3、修改用户名4、修改头像5、添加标记6、删除标记">
+  
+    <link rel="alternate" href="/atom.xml" title="Paranoid&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/bitbug_favicon.ico">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangjian1119.cn"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Paranoid&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-应急api" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/" class="article-date">
+  <time datetime="2018-11-02T07:48:49.000Z" itemprop="datePublished">2018-11-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      应急api
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">外网: http://111.198.29.129:8001     局域网: http:192.168.0.7:8001</span><br></pre></td></tr></table></figure>
+<h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><p><a href="#1注册">1、注册</a><br><br><a href="#2登录">2、登录</a><br><br><a href="#3修改用户名">3、修改用户名</a><br><br><a href="#4修改头像">4、修改头像</a><br><br><a href="#5添加标记">5、添加标记</a><br><br><a href="#6删除标记">6、删除标记</a><br><a id="more"></a><br><a href="#7删除所有标记">7、删除所有标记</a><br><br><a href="#8修改标记">8、修改标记</a><br><br><a href="#9查询标记">9、查询标记</a><br><br><a href="#10推送内容和修改推送内容">10、推送内容和修改推送内容</a><br><br><a href="#11查询推送内容">11、查询推送内容</a><br><br><a href="#12websocket">12、websocket</a><br></p>
+<h2 id="接口列表："><a href="#接口列表：" class="headerlink" title="接口列表："></a>接口列表：</h2><h3 id="1、注册"><a href="#1、注册" class="headerlink" title="1、注册"></a>1、注册</h3><h4 id="请求URL"><a href="#请求URL" class="headerlink" title="请求URL:"></a>请求URL:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/user/register</span><br></pre></td></tr></table></figure>
+<h4 id="请求方式"><a href="#请求方式" class="headerlink" title="请求方式:"></a>请求方式:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型："><a href="#参数类型：" class="headerlink" title="参数类型："></a>参数类型：</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">手机号</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">密码</td>
+</tr>
+<tr>
+<td style="text-align:left">username</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户名</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例："><a href="#返回示例：" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"_id"</span>: <span class="string">"5bdc1f30810e0613012ee6df"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15515001500"</span>,</span><br><span class="line">        <span class="string">"password"</span>: <span class="string">"123"</span>,</span><br><span class="line">        <span class="string">"username"</span>: <span class="string">"15115001500"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"注册成功!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、登录"><a href="#2、登录" class="headerlink" title="2、登录"></a>2、登录</h3><h4 id="请求URL："><a href="#请求URL：" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/user/login</span><br></pre></td></tr></table></figure>
+<h4 id="请求方式："><a href="#请求方式：" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：-1"><a href="#参数类型：-1" class="headerlink" title="参数类型："></a>参数类型：</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">手机号</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">密码</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-1"><a href="#返回示例：-1" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"_id"</span>: <span class="string">"5bd128fb7fd11131588cf068"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15115001500"</span>,</span><br><span class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</span><br><span class="line">        <span class="string">"username"</span>: <span class="string">"15115001500"</span>,</span><br><span class="line">        <span class="string">"token"</span>: <span class="string">"564546554564"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"登录成功!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、修改用户名"><a href="#3、修改用户名" class="headerlink" title="3、修改用户名"></a>3、修改用户名</h3><h4 id="请求URL：-1"><a href="#请求URL：-1" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/user/rename/:userId</span><br></pre></td></tr></table></figure>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/user/rename/5bd128fb7fd11131588cf068</span><br></pre></td></tr></table></figure>
+<h4 id="请求方式：-1"><a href="#请求方式：-1" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：param"><a href="#参数类型：param" class="headerlink" title="参数类型：param"></a>参数类型：param</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">username</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户名</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-2"><a href="#返回示例：-2" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"_id"</span>: <span class="string">"5bd128fb7fd11131588cf068"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15115001500"</span>,</span><br><span class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</span><br><span class="line">        <span class="string">"username"</span>: <span class="string">"15115001500"</span>,</span><br><span class="line">        <span class="string">"token"</span>: <span class="string">"564546554564"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"修改成功!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4、修改头像"><a href="#4、修改头像" class="headerlink" title="4、修改头像"></a>4、修改头像</h3><h4 id="请求URL：-2"><a href="#请求URL：-2" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/user/avatar/:userId</span><br></pre></td></tr></table></figure>
+<h4 id="示例：-1"><a href="#示例：-1" class="headerlink" title="示例："></a>示例：</h4><p><a href="http://111.198.29.129:8001/user/avatar/5bd128fb7fd11131588cf068" target="_blank" rel="noopener">http://111.198.29.129:8001/user/avatar/5bd128fb7fd11131588cf068</a></p>
+<h4 id="请求方式：-2"><a href="#请求方式：-2" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：param-1"><a href="#参数类型：param-1" class="headerlink" title="参数类型：param"></a>参数类型：param</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">avatar</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">file</td>
+<td style="text-align:left">图片</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-3"><a href="#返回示例：-3" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">		<span class="string">"avatar"</span>: <span class="string">"http://111.198.29.129:8001/images/187613da20c304f80b64b47fe86cdfd4.jpg"</span>,</span><br><span class="line">        <span class="string">"_id"</span>: <span class="string">"5bd128fb7fd11131588cf068"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15115001500"</span>,</span><br><span class="line">        <span class="string">"password"</span>: <span class="string">"123456"</span>,</span><br><span class="line">        <span class="string">"username"</span>: <span class="string">"15115001500"</span>,</span><br><span class="line">        <span class="string">"token"</span>: <span class="string">"564546554564"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"修改成功!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5、添加标记"><a href="#5、添加标记" class="headerlink" title="5、添加标记"></a>5、添加标记</h3><h4 id="请求URL：-3"><a href="#请求URL：-3" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/sign/add</span><br></pre></td></tr></table></figure>
+<h4 id="请求方式：-3"><a href="#请求方式：-3" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：-2"><a href="#参数类型：-2" class="headerlink" title="参数类型："></a>参数类型：</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">userId</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户ID</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">标记名称</td>
+</tr>
+<tr>
+<td style="text-align:left">address</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">地址</td>
+</tr>
+<tr>
+<td style="text-align:left">temperature</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">温度</td>
+</tr>
+<tr>
+<td style="text-align:left">dampness</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">湿度</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">类型</td>
+</tr>
+<tr>
+<td style="text-align:left">latgitude</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">纬度</td>
+</tr>
+<tr>
+<td style="text-align:left">longitude</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">经度</td>
+</tr>
+<tr>
+<td style="text-align:left">userName</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">采集人</td>
+</tr>
+<tr>
+<td style="text-align:left">describe</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">描述</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number（0/1）</td>
+<td style="text-align:left">状态</td>
+</tr>
+<tr>
+<td style="text-align:left">pic</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">file</td>
+<td style="text-align:left">上传图片</td>
+</tr>
+<tr>
+<td style="text-align:left">dataSource</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">number（0/1）</td>
+<td style="text-align:left">来源</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">客户端的id</td>
+</tr>
+<tr>
+<td style="text-align:left">ampLat</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">纬度</td>
+</tr>
+<tr>
+<td style="text-align:left">ampLng</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">经度</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-4"><a href="#返回示例：-4" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"_id"</span>: <span class="string">"5bdc1b33810e0613012ee6dd"</span>,</span><br><span class="line">        <span class="string">"userId"</span>: <span class="string">"5bd128fb7fd11131588cf0681"</span>,</span><br><span class="line">        <span class="string">"latgitude"</span>: <span class="number">39.90469</span>,</span><br><span class="line">        <span class="string">"longitude"</span>: <span class="number">116.407173</span>,</span><br><span class="line">        <span class="string">"userName"</span>: <span class="string">"wwsdf"</span>,</span><br><span class="line">        <span class="string">"describe"</span>: <span class="string">"1234568"</span>,</span><br><span class="line">        <span class="string">"address"</span>: <span class="string">"aaa1111"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"添加成功！"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6、删除标记"><a href="#6、删除标记" class="headerlink" title="6、删除标记"></a>6、删除标记</h3><h4 id="请求URL：-4"><a href="#请求URL：-4" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/sign/delete/:signId</span><br></pre></td></tr></table></figure>
+<h4 id="示例：-2"><a href="#示例：-2" class="headerlink" title="示例："></a>示例：</h4><p><a href="http://111.198.29.129:8001/sign/delete/5bdc0a79562d527dd0fe1c1d" target="_blank" rel="noopener">http://111.198.29.129:8001/sign/delete/5bdc0a79562d527dd0fe1c1d</a></p>
+<h4 id="请求方式：-4"><a href="#请求方式：-4" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：param-2"><a href="#参数类型：param-2" class="headerlink" title="参数类型：param"></a>参数类型：param</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">signId</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">标记ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-5"><a href="#返回示例：-5" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"n"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">"ok"</span>: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"删除成功！"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7、删除所有标记"><a href="#7、删除所有标记" class="headerlink" title="7、删除所有标记"></a>7、删除所有标记</h3><h4 id="请求URL：-5"><a href="#请求URL：-5" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/sign/deleteAll/:userId</span><br></pre></td></tr></table></figure>
+<h4 id="示例：-3"><a href="#示例：-3" class="headerlink" title="示例："></a>示例：</h4><p><a href="http://111.198.29.129:8001/sign/deleteAll/5bd128fb7fd11131588cf0681" target="_blank" rel="noopener">http://111.198.29.129:8001/sign/deleteAll/5bd128fb7fd11131588cf0681</a></p>
+<h4 id="请求方式：-5"><a href="#请求方式：-5" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：param-3"><a href="#参数类型：param-3" class="headerlink" title="参数类型：param"></a>参数类型：param</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">userId</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户ID</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-6"><a href="#返回示例：-6" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"n"</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="string">"ok"</span>: <span class="number">1</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"删除成功！"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="8、修改标记"><a href="#8、修改标记" class="headerlink" title="8、修改标记"></a>8、修改标记</h3><h4 id="请求URL：-6"><a href="#请求URL：-6" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/sign/update/</span><br></pre></td></tr></table></figure>
+<h4 id="请求方式：-6"><a href="#请求方式：-6" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：-3"><a href="#参数类型：-3" class="headerlink" title="参数类型："></a>参数类型：</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">userId</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户ID</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">标记名称</td>
+</tr>
+<tr>
+<td style="text-align:left">address</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">地址</td>
+</tr>
+<tr>
+<td style="text-align:left">temperature</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">温度</td>
+</tr>
+<tr>
+<td style="text-align:left">dampness</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">湿度</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">类型</td>
+</tr>
+<tr>
+<td style="text-align:left">latgitude</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">纬度</td>
+</tr>
+<tr>
+<td style="text-align:left">longitude</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">经度</td>
+</tr>
+<tr>
+<td style="text-align:left">userName</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">采集人</td>
+</tr>
+<tr>
+<td style="text-align:left">describe</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">描述</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number（0/1）</td>
+<td style="text-align:left">状态</td>
+</tr>
+<tr>
+<td style="text-align:left">pic</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">file</td>
+<td style="text-align:left">上传图片</td>
+</tr>
+<tr>
+<td style="text-align:left">dataSource</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">number（0/1）</td>
+<td style="text-align:left">来源</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">客户端的id</td>
+</tr>
+<tr>
+<td style="text-align:left">ampLat</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">纬度</td>
+</tr>
+<tr>
+<td style="text-align:left">ampLng</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">经度</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-7"><a href="#返回示例：-7" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: &#123;</span><br><span class="line">        <span class="string">"_id"</span>: <span class="string">"5bdc25b3c5317b13b99383f1"</span>,</span><br><span class="line">        <span class="string">"userId"</span>: <span class="string">"5bd128fb7fd11131588cf0681"</span>,</span><br><span class="line">        <span class="string">"latgitude"</span>: <span class="number">39.90469</span>,</span><br><span class="line">        <span class="string">"longitude"</span>: <span class="number">116.407173</span>,</span><br><span class="line">        <span class="string">"userName"</span>: <span class="string">"wwsdf"</span>,</span><br><span class="line">        <span class="string">"describe"</span>: <span class="string">"1234568"</span>,</span><br><span class="line">        <span class="string">"address"</span>: <span class="string">"sss"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"1111"</span>,</span><br><span class="line">        <span class="string">"temperature"</span>: <span class="number">111</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"修改成功!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="9、查询标记"><a href="#9、查询标记" class="headerlink" title="9、查询标记"></a>9、查询标记</h3><h4 id="请求URL：-7"><a href="#请求URL：-7" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/sign/history/</span><br></pre></td></tr></table></figure>
+<h4 id="示例：-4"><a href="#示例：-4" class="headerlink" title="示例："></a>示例：</h4><p><a href="http://111.198.29.129:8001/sign/history/5bd128fb7fd11131588cf0681?pageSize=10&amp;page=1" target="_blank" rel="noopener">http://111.198.29.129:8001/sign/history/5bd128fb7fd11131588cf0681?pageSize=10&amp;page=1</a></p>
+<h4 id="请求方式：-7"><a href="#请求方式：-7" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：param-query"><a href="#参数类型：param-query" class="headerlink" title="参数类型：param+query"></a>参数类型：param+query</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">userId</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">用户ID</td>
+</tr>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">页数（默认第1页）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">每页个数（默认10个）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-8"><a href="#返回示例：-8" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"_id"</span>: <span class="string">"5bdc25b3c5317b13b99383f1"</span>,</span><br><span class="line">            <span class="string">"userId"</span>: <span class="string">"5bd128fb7fd11131588cf0681"</span>,</span><br><span class="line">            <span class="string">"latgitude"</span>: <span class="number">39.90469</span>,</span><br><span class="line">            <span class="string">"longitude"</span>: <span class="number">116.407173</span>,</span><br><span class="line">            <span class="string">"userName"</span>: <span class="string">"wwsdf"</span>,</span><br><span class="line">            <span class="string">"describe"</span>: <span class="string">"1234568"</span>,</span><br><span class="line">            <span class="string">"address"</span>: <span class="string">"aaa1111"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"查询成功！"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="10、推送内容和修改推送内容"><a href="#10、推送内容和修改推送内容" class="headerlink" title="10、推送内容和修改推送内容"></a>10、推送内容和修改推送内容</h3><h4 id="请求URL：-8"><a href="#请求URL：-8" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/push/all</span><br></pre></td></tr></table></figure>
+<h4 id="请求方式：-8"><a href="#请求方式：-8" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：query"><a href="#参数类型：query" class="headerlink" title="参数类型：query"></a>参数类型：query</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">value</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">推送内容</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">修改内容的id</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-9"><a href="#返回示例：-9" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"sendno"</span>: <span class="string">"1"</span>,</span><br><span class="line">    <span class="string">"msg_id"</span>: <span class="string">"1109414512"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="11、查询推送内容"><a href="#11、查询推送内容" class="headerlink" title="11、查询推送内容"></a>11、查询推送内容</h3><h4 id="请求URL：-9"><a href="#请求URL：-9" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://111.198.29.129:8001/push/history</span><br></pre></td></tr></table></figure>
+<h4 id="示例：-5"><a href="#示例：-5" class="headerlink" title="示例："></a>示例：</h4><p>localhost:8001/push/history?pageSize=10&amp;page=1</p>
+<h4 id="请求方式：-9"><a href="#请求方式：-9" class="headerlink" title="请求方式："></a>请求方式：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST</span><br></pre></td></tr></table></figure>
+<h4 id="参数类型：query-1"><a href="#参数类型：query-1" class="headerlink" title="参数类型：query"></a>参数类型：query</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:center">是否必选</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">页数（默认第1页）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">每页个数（默认10个）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="返回示例：-10"><a href="#返回示例：-10" class="headerlink" title="返回示例："></a>返回示例：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"code"</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="string">"data"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"_id"</span>: <span class="string">"5bfbc2dfffc7983568cb1db8"</span>,</span><br><span class="line">            <span class="string">"content"</span>: <span class="string">"4"</span>,</span><br><span class="line">            <span class="string">"issueDate"</span>: <span class="string">"2018-11-26 17:54:38"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"_id"</span>: <span class="string">"5bfbc2e1ffc7983568cb1db9"</span>,</span><br><span class="line">            <span class="string">"content"</span>: <span class="string">"4"</span>,</span><br><span class="line">            <span class="string">"issueDate"</span>: <span class="string">"2018-11-26 17:54:41"</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"_id"</span>: <span class="string">"5bfbc2e5ffc7983568cb1dba"</span>,</span><br><span class="line">            <span class="string">"content"</span>: <span class="string">"3"</span>,</span><br><span class="line">            <span class="string">"issueDate"</span>: <span class="string">"2018-11-26 17:54:45"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"msg"</span>: <span class="string">"查询成功！"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="12、websocket"><a href="#12、websocket" class="headerlink" title="12、websocket"></a>12、websocket</h3><h4 id="请求URL：-10"><a href="#请求URL：-10" class="headerlink" title="请求URL："></a>请求URL：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ws://111.198.29.129:8001/ws/position</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2018/11/02/cjyef6iwv000p4kuyq2hkow7r/" data-id="cjyef6iwv000p4kuyq2hkow7r" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/">api</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/13/cjyef6iw3000g4kuya6nt3mjz/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          token 认知
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/24/cjyef6ivk000b4kuy7xpk4o2i/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">XMLHttpRequest对象的常用方法和属性</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+           <div id="gitment_comments"></div>
+    
+  </div>
+ 
+
+  
+
+</section>
+           
+    <aside id="sidebar">
+  <canvas id="canvas" style="width: 100%;margin-top: 50px"></canvas>
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目录："><span class="toc-number">1.</span> <span class="toc-text">目录：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口列表："><span class="toc-number">2.</span> <span class="toc-text">接口列表：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、注册"><span class="toc-number">2.1.</span> <span class="toc-text">1、注册</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL"><span class="toc-number">2.1.1.</span> <span class="toc-text">请求URL:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式"><span class="toc-number">2.1.2.</span> <span class="toc-text">请求方式:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型："><span class="toc-number">2.1.3.</span> <span class="toc-text">参数类型：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例："><span class="toc-number">2.1.4.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、登录"><span class="toc-number">2.2.</span> <span class="toc-text">2、登录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL："><span class="toc-number">2.2.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式："><span class="toc-number">2.2.2.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：-1"><span class="toc-number">2.2.3.</span> <span class="toc-text">参数类型：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-1"><span class="toc-number">2.2.4.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、修改用户名"><span class="toc-number">2.3.</span> <span class="toc-text">3、修改用户名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例："><span class="toc-number">2.3.2.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-1"><span class="toc-number">2.3.3.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：param"><span class="toc-number">2.3.4.</span> <span class="toc-text">参数类型：param</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-2"><span class="toc-number">2.3.5.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、修改头像"><span class="toc-number">2.4.</span> <span class="toc-text">4、修改头像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-2"><span class="toc-number">2.4.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例：-1"><span class="toc-number">2.4.2.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-2"><span class="toc-number">2.4.3.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：param-1"><span class="toc-number">2.4.4.</span> <span class="toc-text">参数类型：param</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-3"><span class="toc-number">2.4.5.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、添加标记"><span class="toc-number">2.5.</span> <span class="toc-text">5、添加标记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-3"><span class="toc-number">2.5.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-3"><span class="toc-number">2.5.2.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：-2"><span class="toc-number">2.5.3.</span> <span class="toc-text">参数类型：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-4"><span class="toc-number">2.5.4.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、删除标记"><span class="toc-number">2.6.</span> <span class="toc-text">6、删除标记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-4"><span class="toc-number">2.6.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例：-2"><span class="toc-number">2.6.2.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-4"><span class="toc-number">2.6.3.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：param-2"><span class="toc-number">2.6.4.</span> <span class="toc-text">参数类型：param</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-5"><span class="toc-number">2.6.5.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、删除所有标记"><span class="toc-number">2.7.</span> <span class="toc-text">7、删除所有标记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-5"><span class="toc-number">2.7.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例：-3"><span class="toc-number">2.7.2.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-5"><span class="toc-number">2.7.3.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：param-3"><span class="toc-number">2.7.4.</span> <span class="toc-text">参数类型：param</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-6"><span class="toc-number">2.7.5.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、修改标记"><span class="toc-number">2.8.</span> <span class="toc-text">8、修改标记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-6"><span class="toc-number">2.8.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-6"><span class="toc-number">2.8.2.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：-3"><span class="toc-number">2.8.3.</span> <span class="toc-text">参数类型：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-7"><span class="toc-number">2.8.4.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、查询标记"><span class="toc-number">2.9.</span> <span class="toc-text">9、查询标记</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-7"><span class="toc-number">2.9.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例：-4"><span class="toc-number">2.9.2.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-7"><span class="toc-number">2.9.3.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：param-query"><span class="toc-number">2.9.4.</span> <span class="toc-text">参数类型：param+query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-8"><span class="toc-number">2.9.5.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、推送内容和修改推送内容"><span class="toc-number">2.10.</span> <span class="toc-text">10、推送内容和修改推送内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-8"><span class="toc-number">2.10.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-8"><span class="toc-number">2.10.2.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：query"><span class="toc-number">2.10.3.</span> <span class="toc-text">参数类型：query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-9"><span class="toc-number">2.10.4.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、查询推送内容"><span class="toc-number">2.11.</span> <span class="toc-text">11、查询推送内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-9"><span class="toc-number">2.11.1.</span> <span class="toc-text">请求URL：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例：-5"><span class="toc-number">2.11.2.</span> <span class="toc-text">示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#请求方式：-9"><span class="toc-number">2.11.3.</span> <span class="toc-text">请求方式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数类型：query-1"><span class="toc-number">2.11.4.</span> <span class="toc-text">参数类型：query</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#返回示例：-10"><span class="toc-number">2.11.5.</span> <span class="toc-text">返回示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、websocket"><span class="toc-number">2.12.</span> <span class="toc-text">12、websocket</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#请求URL：-10"><span class="toc-number">2.12.1.</span> <span class="toc-text">请求URL：</span></a></li></ol></li></ol></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+<script>
+    var digit=
+      [
+          [
+              [0,0,1,1,1,0,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,0,1,1,0],
+              [0,0,1,1,1,0,0]
+          ],//0
+          [
+              [0,0,0,1,1,0,0],
+              [0,1,1,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [1,1,1,1,1,1,1]
+          ],//1
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,1,1],
+              [1,1,1,1,1,1,1]
+          ],//2
+          [
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//3
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,0],
+              [0,0,1,1,1,1,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,1,1,0],
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,1]
+          ],//4
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,1,1,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//5
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//6
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0]
+          ],//7
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//8
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,1,1,0,0,0,0]
+          ],//9
+          [
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0]
+          ]//:
+      ];
+  var canvas = document.getElementById('canvas');
+  if(canvas.getContext){
+      var cxt = canvas.getContext('2d');
+      //声明canvas的宽高
+      var H = 100,W = 700;
+      canvas.height = H;
+      canvas.width = W;
+      //存储时间数据
+      var data = [];
+      //存储运动的小球
+      var balls = [];
+      //设置粒子半径
+      var R = canvas.height/20-1;
+      (function(){
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+          data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);    
+      })();
+  
+      /*生成点阵数字*/
+      function renderDigit(index,num){
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      cxt.beginPath();
+                      cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                      cxt.closePath();
+                      cxt.fill();
+                  }
+              }
+          }        
+      }
+  
+      /*更新时钟*/
+      function updateDigitTime(){
+          var changeNumArray = [];
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          var NewData = [];
+          NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+          for(var i = data.length-1; i >=0 ; i--){
+              //时间发生变化 
+              if(NewData[i] !== data[i]){
+                  //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                  changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+              }
+          }
+          //增加小球
+          for(var i = 0; i< changeNumArray.length; i++){
+              addBalls.apply(this,changeNumArray[i].split('_'));
+          }    
+          data = NewData.concat();
+      }
+  
+      /*更新小球状态*/
+      function updateBalls(){
+          for(var i = 0; i < balls.length; i++){
+              balls[i].stepY += balls[i].disY;
+              balls[i].x += balls[i].stepX;
+              balls[i].y += balls[i].stepY;    
+              if(balls[i].x > W + R || balls[i].y > H + R){
+                  balls.splice(i,1);
+                  i--;
+              }                
+          }
+      }
+  
+      /*增加要运动的小球*/
+      function addBalls(index,num){
+          var numArray = [1,2,3];
+          var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      var ball = {
+                          x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                          y:i*2*(R+1)+(R+1),
+                          stepX:Math.floor(Math.random() * 4 -2),
+                          stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                          color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                          disY:1
+                      };
+                      balls.push(ball);            
+                  }
+              }
+          }    
+      }
+  
+      /*渲染*/
+      function render(){
+          //重置画布宽度，达到清空画布的效果
+          canvas.height = 100;
+          //渲染时钟
+          for(var i = 0; i < data.length; i++){
+              renderDigit(i,data[i]);
+          }        
+          //渲染小球
+          for(var i = 0; i < balls.length; i++){
+              cxt.beginPath();
+              cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+              cxt.fillStyle = balls[i].color;
+              cxt.closePath();
+              cxt.fill();                
+          }
+      }
+  
+      clearInterval(oTimer);
+      var oTimer = setInterval(function(){
+          //更新时钟
+          updateDigitTime();
+          //更新小球状态
+          updateBalls();
+          //渲染
+          render();
+      },50);    
+  }
+  </script>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 wangjian&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wj651196692@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> 
+  <script>
+  var gitment = new Gitment({
+    // id: '页面 ID', // 可选。默认为 location.href
+    owner: 'wangjian1119',
+    repo: 'wangjian1119.github.io',
+    oauth: {
+    client_id: '225ee683ce3133636796',
+    client_secret: 'b3797ac45d4460c94d68e1e2ec3b83cde33c4571',
+    }
+  })
+  gitment.render(document.getElementById("gitment_comments"))
+</script>
+
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
