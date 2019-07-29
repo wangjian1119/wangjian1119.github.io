@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>html5 兼容问题 | Paranoid&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS hack `\9 所有的IE10及之前  IE7以及IE7以下版本的_ IE6以及IE6以下版本的!important  提升样式优先级权重`">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5 兼容问题">
+<meta property="og:url" content="http://wangjian1119.cn/2018/05/17/cjyick5nj0009wouyv7wzo783/index.html">
+<meta property="og:site_name" content="Paranoid&#39;s Blog">
+<meta property="og:description" content="CSS hack `\9 所有的IE10及之前  IE7以及IE7以下版本的_ IE6以及IE6以下版本的!important  提升样式优先级权重`">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-23T10:13:32.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5 兼容问题">
+<meta name="twitter:description" content="CSS hack `\9 所有的IE10及之前  IE7以及IE7以下版本的_ IE6以及IE6以下版本的!important  提升样式优先级权重`">
+  
+    <link rel="alternate" href="/atom.xml" title="Paranoid&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/bitbug_favicon.ico">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangjian1119.cn"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Paranoid&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-html5-兼容问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/17/cjyick5nj0009wouyv7wzo783/" class="article-date">
+  <time datetime="2018-05-17T02:17:13.000Z" itemprop="datePublished">2018-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      html5 兼容问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>CSS hack</p>
+<p>`<br>\9 所有的IE10及之前</p>
+<ul>
+<li>IE7以及IE7以下版本的<br>_ IE6以及IE6以下版本的<br>!important  提升样式优先级权重<br>`</li>
+</ul>
+<a id="more"></a>
+<p>1、ie6，7，8对H5标签兼容</p>
+<p>页面中引入html5shiv.js，下载地址:<a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="noopener">https://github.com/aFarkas/html5shiv</a></p>
+<p>2、IE6双边距</p>
+<p>当元素浮动后，再设置同方向margin，会产生双边距</p>
+<p>解决：增加 </p>
+<p>1<br>*display:inline;
+　　</p>
+<p>3、IE6最小高度问题</p>
+<p>　　IE6下最小高度19px，想小于此高度，增加</p>
+<p>1<br>*overflow:hidden;
+　　</p>
+<p>4、li里元素都浮动 li 在IE6 7  下方会产生4px间隙问题</p>
+<p>针对li添加</p>
+<p>1<br>*vertical-align: top;
+　　</p>
+<p>5、浮动元素之间注释，导致多复制一个文字问题</p>
+<p>　　　　两个浮动元素中间有注释或者内联元素并且和父级宽度相差不超过3px时，</p>
+<p>　　　　　　1）两个浮动元素中间避免出现内联元素或者注释<br>　　　　　　2）与父级宽度相差3px或以上</p>
+<p>6、IE6 7 父级元素的overflow:hidden 是包不住子级的relative</p>
+<p>　　　　针对ie6、7给父级元素添加相对定位</p>
+<p>1<br>2<br>overflow: hidden;<br>*position: relative;
+　　</p>
+<p>7、IE6下绝对定位元素父级宽高是奇数,绝对定位元素的right和bottom值会有1px的偏差</p>
+<p>　　　　避免父级宽高出现奇数</p>
+<p>8、IE6下绝对定位元素和浮动元素并列绝对定位元素消失</p>
+<p>　　　　浮动元素和绝对定位元素是同级的话定位元素就会消失</p>
+<p>　　　　　　解决:不处于同级</p>
+<p>9、IE6 下input的空隙</p>
+<p>　　　　给input元素添加float</p>
+<p>10、display:inline-block</p>
+<p>　　　　IE6下使用</p>
+<p>1<br>2<br><em>display:inline;
+</em>zoom:1;
+　　</p>
+<p>11、margin兼容性问题　　　</p>
+<p>　　　　1）margin-top传递<br>　　　　触发BFC、haslayout，父元素增加</p>
+<p>1<br>2<br>overflow: hidden;<br>zoom:1;<br>　　　　2）上下margin叠压</p>
+<p>　　　　尽量使用同一方向的margin，比如都设置top或者bottom</p>
+<p>12、p 包含块元素嵌套规则</p>
+<p>　　　　不要嵌套</p>
+<p>13、IE6下子元素超出父级宽高，会把父级的宽高撑开</p>
+<p>　　　　不要让子元素的宽高超过父级</p>
+<p>14、第一块元素浮动,第二块元素加margin值等于第一块元素,在IE6下会有间隙问题;　</p>
+<p>　　　　1）不建议这么写<br>　　　　2）用浮动解决</p>
+<p>15、元素浮动之后,能设置宽度的话就给元素加宽度.如果需要宽度是内容撑开,就给它里边的块元素加上浮动</p>
+<p>　　　　浮动元素中存在块元素,给块元素增加float</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2018/05/17/cjyick5nj0009wouyv7wzo783/" data-id="cjyick5nj0009wouyv7wzo783" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/13/cjyick5ou000pwouywfn6hoha/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          token 认知
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/25/cjyick5ok000lwouyu7hpk26k/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">UDP</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+           <div id="gitment_comments"></div>
+    
+  </div>
+ 
+
+  
+
+</section>
+           
+    <aside id="sidebar">
+  <canvas id="canvas" style="width: 100%;margin-top: 50px"></canvas>
+  
+    
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/23/cjyick5po0012wouyt5ia0ik0/">状态码</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/24/cjyick5pd000ywouy787tx178/">linux 目录以及作用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/20/cjyick5op000owouya0h3ikwk/">关于移动端适配，你必须要知道的</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/11/cjyick5mb0001wouyn0tgz2i7/">GNSS 常用命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/cjyick5n80006wouy7882bjho/">CentOS apache安装SSL证书问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+<script>
+    var digit=
+      [
+          [
+              [0,0,1,1,1,0,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,0,1,1,0],
+              [0,0,1,1,1,0,0]
+          ],//0
+          [
+              [0,0,0,1,1,0,0],
+              [0,1,1,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [1,1,1,1,1,1,1]
+          ],//1
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,1,1],
+              [1,1,1,1,1,1,1]
+          ],//2
+          [
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//3
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,0],
+              [0,0,1,1,1,1,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,1,1,0],
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,1]
+          ],//4
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,1,1,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//5
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//6
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0]
+          ],//7
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//8
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,1,1,0,0,0,0]
+          ],//9
+          [
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0]
+          ]//:
+      ];
+  var canvas = document.getElementById('canvas');
+  if(canvas.getContext){
+      var cxt = canvas.getContext('2d');
+      //声明canvas的宽高
+      var H = 100,W = 700;
+      canvas.height = H;
+      canvas.width = W;
+      //存储时间数据
+      var data = [];
+      //存储运动的小球
+      var balls = [];
+      //设置粒子半径
+      var R = canvas.height/20-1;
+      (function(){
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+          data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);    
+      })();
+  
+      /*生成点阵数字*/
+      function renderDigit(index,num){
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      cxt.beginPath();
+                      cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                      cxt.closePath();
+                      cxt.fill();
+                  }
+              }
+          }        
+      }
+  
+      /*更新时钟*/
+      function updateDigitTime(){
+          var changeNumArray = [];
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          var NewData = [];
+          NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+          for(var i = data.length-1; i >=0 ; i--){
+              //时间发生变化 
+              if(NewData[i] !== data[i]){
+                  //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                  changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+              }
+          }
+          //增加小球
+          for(var i = 0; i< changeNumArray.length; i++){
+              addBalls.apply(this,changeNumArray[i].split('_'));
+          }    
+          data = NewData.concat();
+      }
+  
+      /*更新小球状态*/
+      function updateBalls(){
+          for(var i = 0; i < balls.length; i++){
+              balls[i].stepY += balls[i].disY;
+              balls[i].x += balls[i].stepX;
+              balls[i].y += balls[i].stepY;    
+              if(balls[i].x > W + R || balls[i].y > H + R){
+                  balls.splice(i,1);
+                  i--;
+              }                
+          }
+      }
+  
+      /*增加要运动的小球*/
+      function addBalls(index,num){
+          var numArray = [1,2,3];
+          var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      var ball = {
+                          x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                          y:i*2*(R+1)+(R+1),
+                          stepX:Math.floor(Math.random() * 4 -2),
+                          stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                          color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                          disY:1
+                      };
+                      balls.push(ball);            
+                  }
+              }
+          }    
+      }
+  
+      /*渲染*/
+      function render(){
+          //重置画布宽度，达到清空画布的效果
+          canvas.height = 100;
+          //渲染时钟
+          for(var i = 0; i < data.length; i++){
+              renderDigit(i,data[i]);
+          }        
+          //渲染小球
+          for(var i = 0; i < balls.length; i++){
+              cxt.beginPath();
+              cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+              cxt.fillStyle = balls[i].color;
+              cxt.closePath();
+              cxt.fill();                
+          }
+      }
+  
+      clearInterval(oTimer);
+      var oTimer = setInterval(function(){
+          //更新时钟
+          updateDigitTime();
+          //更新小球状态
+          updateBalls();
+          //渲染
+          render();
+      },50);    
+  }
+  </script>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 wangjian&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wj651196692@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> 
+  <script>
+  var gitment = new Gitment({
+    // id: '页面 ID', // 可选。默认为 location.href
+    owner: 'wangjian1119',
+    repo: 'wangjian1119.github.io',
+    oauth: {
+    client_id: '225ee683ce3133636796',
+    client_secret: 'b3797ac45d4460c94d68e1e2ec3b83cde33c4571',
+    }
+  })
+  gitment.render(document.getElementById("gitment_comments"))
+</script>
+
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
