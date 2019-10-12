@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>XMLHttpRequest对象的常用方法和属性 | Paranoid&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="方法:写在这里的为必选参数或者经常用到的可选参数 1. open()书上解释: 用于设置请求的目标url请求方法, 以及其他参数信息 个人理解: 发送请求的页面在不刷新的情况能将参数传给一个服务器进行处理, 这个方法就是将这些个参数传送过去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XMLHttpRequest对象的常用方法和属性">
+<meta property="og:url" content="http://wangjian1119.cn/2017/09/24/ck1nle2sl0001t0uymnvx6yz9/index.html">
+<meta property="og:site_name" content="Paranoid&#39;s Blog">
+<meta property="og:description" content="方法:写在这里的为必选参数或者经常用到的可选参数 1. open()书上解释: 用于设置请求的目标url请求方法, 以及其他参数信息 个人理解: 发送请求的页面在不刷新的情况能将参数传给一个服务器进行处理, 这个方法就是将这些个参数传送过去">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-09T12:13:54.028Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XMLHttpRequest对象的常用方法和属性">
+<meta name="twitter:description" content="方法:写在这里的为必选参数或者经常用到的可选参数 1. open()书上解释: 用于设置请求的目标url请求方法, 以及其他参数信息 个人理解: 发送请求的页面在不刷新的情况能将参数传给一个服务器进行处理, 这个方法就是将这些个参数传送过去">
+  
+    <link rel="alternate" href="/atom.xml" title="Paranoid&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/bitbug_favicon.ico">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wangjian1119.cn"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Paranoid&#39;s Blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-XMLHttpRequest对象的常用方法和属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/24/ck1nle2sl0001t0uymnvx6yz9/" class="article-date">
+  <time datetime="2017-09-24T08:52:17.000Z" itemprop="datePublished">2017-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      XMLHttpRequest对象的常用方法和属性
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>方法:写在这里的为必选参数或者经常用到的可选参数</p>
+<h4 id="1-open"><a href="#1-open" class="headerlink" title="1. open()"></a>1. open()</h4><p>书上解释: 用于设置请求的目标url请求方法, 以及其他参数信息</p>
+<p>个人理解: 发送请求的页面在不刷新的情况能将参数传给一个服务器进行处理, 这个方法就是将这些个参数传送过去<br><a id="more"></a><br>参数:</p>
+<ol>
+<li>method:用于指定请求的类型  “GET”或者”POST”</li>
+<li>url:用于请求的地址, 可相对可绝对</li>
+<li>asyncFlag:指定请求方式为同步还是异步, true为异步, false为同步</li>
+</ol>
+<h4 id="2-send"><a href="#2-send" class="headerlink" title="2. send()"></a>2. send()</h4><p>书上解释: 用于向服务器发送请求, 如果声明为异步, 那么该方法将立即返回, 否则将等到接收到服务器响应为止</p>
+<p>个人理解: 这个东西就是将一些参数以键值对的方式传送给服务器, 异步的话将立即返回服务器的响应, 做到不刷新页面进行数据处理就是用来发送参数的, GET方法下可以在url的后面写上参数的值, POST方法下只能在send()方法里面写上参数的键值对</p>
+<h4 id="3-setRequestHeader-“header”-”value”"><a href="#3-setRequestHeader-“header”-”value”" class="headerlink" title="3. setRequestHeader(“header”,”value”)"></a>3. setRequestHeader(“header”,”value”)</h4><p>书上解释: 用于为请求的Http头设置值</p>
+<p>个人理解: 和下面这个方法互相使用</p>
+<h4 id="4-getResponseHeader-“headerLabel”"><a href="#4-getResponseHeader-“headerLabel”" class="headerlink" title="4. getResponseHeader(“headerLabel”)"></a>4. getResponseHeader(“headerLabel”)</h4><p>书上解释: 返回设置的Http头信息</p>
+<h4 id="5-abort"><a href="#5-abort" class="headerlink" title="5. abort()"></a>5. abort()</h4><p>书上解释: 停止或者放弃当前的异步请求</p>
+<p>个人理解: 使用了这个请求之后会直接停止getResult的回调函数, 让readyState属性的返回值直接为0</p>
+<h4 id="6-getAllResponseHeaders"><a href="#6-getAllResponseHeaders" class="headerlink" title="6. getAllResponseHeaders()"></a>6. getAllResponseHeaders()</h4><p>以字符串的形式返回完整的字符串信息</p>
+<p>属性:</p>
+<h4 id="1-onreadystatechange"><a href="#1-onreadystatechange" class="headerlink" title="1. onreadystatechange"></a>1. onreadystatechange</h4><p>书上解释: 用于指定状态改变时所触发的事件处理器</p>
+<p>个人理解: 在设置回调函数的时候经常用到, 所有的状态改变的时候都会触发这个事件处理器</p>
+<h4 id="2-readyState"><a href="#2-readyState" class="headerlink" title="2. readyState"></a>2. readyState</h4><p>书上解释: 用于获取请求的状态</p>
+<p>个人理解: 通过返回的代码是多少来判断当前的状态是什么情况</p>
+<p>返回值有</p>
+<p>0: 未初始化; 1: 正在加载; 2:已加载; 3:交互中; 4:完成</p>
+<h4 id="3-responseText"><a href="#3-responseText" class="headerlink" title="3. responseText"></a>3. responseText</h4><p>书上解释: 获取服务器的响应, 表示为字符串</p>
+<p>个人理解: response.getWrite().append(“”);将这个语句的内容返回到用户页面</p>
+<h4 id="4-responseXML"><a href="#4-responseXML" class="headerlink" title="4. responseXML"></a>4. responseXML</h4><p>书上解释: 用于获取服务器的响应, 表示为字符串</p>
+<h4 id="5-status"><a href="#5-status" class="headerlink" title="5. status"></a>5. status</h4><p>返回Http状态码——200:表示成功; 202:表示请求被接受, 但尚未成功; 400:错误的请求; 404:文件未找到; 500:内部服务器错误</p>
+<h4 id="6-statusText"><a href="#6-statusText" class="headerlink" title="6. statusText"></a>6. statusText</h4><p>返回Http状态码的文本信息</p>
+<p>转自</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/wgbs25673578/p/5056300.html" target="_blank" rel="noopener">https://www.cnblogs.com/wgbs25673578/p/5056300.html</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wangjian1119.cn/2017/09/24/ck1nle2sl0001t0uymnvx6yz9/" data-id="ck1nle2sl0001t0uymnvx6yz9" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2018/02/25/ck1nle2ui000ht0uysv6eoug5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          UDP
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/02/ck1nle2ur000mt0uyfctizfkj/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">文件模板</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+           <div id="gitment_comments"></div>
+    
+  </div>
+ 
+
+  
+
+</section>
+           
+    <aside id="sidebar">
+  <canvas id="canvas" style="width: 100%;margin-top: 50px"></canvas>
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-open"><span class="toc-number">1.</span> <span class="toc-text">1. open()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-send"><span class="toc-number">2.</span> <span class="toc-text">2. send()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-setRequestHeader-“header”-”value”"><span class="toc-number">3.</span> <span class="toc-text">3. setRequestHeader(“header”,”value”)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-getResponseHeader-“headerLabel”"><span class="toc-number">4.</span> <span class="toc-text">4. getResponseHeader(“headerLabel”)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-abort"><span class="toc-number">5.</span> <span class="toc-text">5. abort()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-getAllResponseHeaders"><span class="toc-number">6.</span> <span class="toc-text">6. getAllResponseHeaders()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-onreadystatechange"><span class="toc-number">7.</span> <span class="toc-text">1. onreadystatechange</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-readyState"><span class="toc-number">8.</span> <span class="toc-text">2. readyState</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-responseText"><span class="toc-number">9.</span> <span class="toc-text">3. responseText</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-responseXML"><span class="toc-number">10.</span> <span class="toc-text">4. responseXML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-status"><span class="toc-number">11.</span> <span class="toc-text">5. status</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-statusText"><span class="toc-number">12.</span> <span class="toc-text">6. statusText</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+<script>
+    var digit=
+      [
+          [
+              [0,0,1,1,1,0,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,0,1,1,0],
+              [0,0,1,1,1,0,0]
+          ],//0
+          [
+              [0,0,0,1,1,0,0],
+              [0,1,1,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [1,1,1,1,1,1,1]
+          ],//1
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,1,1],
+              [1,1,1,1,1,1,1]
+          ],//2
+          [
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//3
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,0],
+              [0,0,1,1,1,1,0],
+              [0,1,1,0,1,1,0],
+              [1,1,0,0,1,1,0],
+              [1,1,1,1,1,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,1,1]
+          ],//4
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,1,1,1,1,0],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//5
+          [
+              [0,0,0,0,1,1,0],
+              [0,0,1,1,0,0,0],
+              [0,1,1,0,0,0,0],
+              [1,1,0,0,0,0,0],
+              [1,1,0,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//6
+          [
+              [1,1,1,1,1,1,1],
+              [1,1,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,0,0,1,1,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0],
+              [0,0,1,1,0,0,0]
+          ],//7
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,1,1,0]
+          ],//8
+          [
+              [0,1,1,1,1,1,0],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [1,1,0,0,0,1,1],
+              [0,1,1,1,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,0,1,1],
+              [0,0,0,0,1,1,0],
+              [0,0,0,1,1,0,0],
+              [0,1,1,0,0,0,0]
+          ],//9
+          [
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,0,0,0,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,1,1,1,0,0],
+              [0,0,0,0,0,0,0]
+          ]//:
+      ];
+  var canvas = document.getElementById('canvas');
+  if(canvas.getContext){
+      var cxt = canvas.getContext('2d');
+      //声明canvas的宽高
+      var H = 100,W = 700;
+      canvas.height = H;
+      canvas.width = W;
+      //存储时间数据
+      var data = [];
+      //存储运动的小球
+      var balls = [];
+      //设置粒子半径
+      var R = canvas.height/20-1;
+      (function(){
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+          data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);    
+      })();
+  
+      /*生成点阵数字*/
+      function renderDigit(index,num){
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      cxt.beginPath();
+                      cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                      cxt.closePath();
+                      cxt.fill();
+                  }
+              }
+          }        
+      }
+  
+      /*更新时钟*/
+      function updateDigitTime(){
+          var changeNumArray = [];
+          var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+          var NewData = [];
+          NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+          for(var i = data.length-1; i >=0 ; i--){
+              //时间发生变化 
+              if(NewData[i] !== data[i]){
+                  //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                  changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+              }
+          }
+          //增加小球
+          for(var i = 0; i< changeNumArray.length; i++){
+              addBalls.apply(this,changeNumArray[i].split('_'));
+          }    
+          data = NewData.concat();
+      }
+  
+      /*更新小球状态*/
+      function updateBalls(){
+          for(var i = 0; i < balls.length; i++){
+              balls[i].stepY += balls[i].disY;
+              balls[i].x += balls[i].stepX;
+              balls[i].y += balls[i].stepY;    
+              if(balls[i].x > W + R || balls[i].y > H + R){
+                  balls.splice(i,1);
+                  i--;
+              }                
+          }
+      }
+  
+      /*增加要运动的小球*/
+      function addBalls(index,num){
+          var numArray = [1,2,3];
+          var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+          for(var i = 0; i < digit[num].length; i++){
+              for(var j = 0; j < digit[num][i].length; j++){
+                  if(digit[num][i][j] == 1){
+                      var ball = {
+                          x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                          y:i*2*(R+1)+(R+1),
+                          stepX:Math.floor(Math.random() * 4 -2),
+                          stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                          color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                          disY:1
+                      };
+                      balls.push(ball);            
+                  }
+              }
+          }    
+      }
+  
+      /*渲染*/
+      function render(){
+          //重置画布宽度，达到清空画布的效果
+          canvas.height = 100;
+          //渲染时钟
+          for(var i = 0; i < data.length; i++){
+              renderDigit(i,data[i]);
+          }        
+          //渲染小球
+          for(var i = 0; i < balls.length; i++){
+              cxt.beginPath();
+              cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+              cxt.fillStyle = balls[i].color;
+              cxt.closePath();
+              cxt.fill();                
+          }
+      }
+  
+      clearInterval(oTimer);
+      var oTimer = setInterval(function(){
+          //更新时钟
+          updateDigitTime();
+          //更新小球状态
+          updateBalls();
+          //渲染
+          render();
+      },50);    
+  }
+  </script>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2019 wangjian&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;wj651196692@gmail.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> 
+  <script>
+  var gitment = new Gitment({
+    // id: '页面 ID', // 可选。默认为 location.href
+    owner: 'wangjian1119',
+    repo: 'wangjian1119.github.io',
+    oauth: {
+    client_id: '225ee683ce3133636796',
+    client_secret: 'b3797ac45d4460c94d68e1e2ec3b83cde33c4571',
+    }
+  })
+  gitment.render(document.getElementById("gitment_comments"))
+</script>
+
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
